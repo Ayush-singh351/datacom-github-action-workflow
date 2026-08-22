@@ -2,9 +2,9 @@ name: Java CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   build:
@@ -16,11 +16,11 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
-          java-version: '17'
+          distribution: "temurin"
+          java-version: "17"
 
       - name: Compile Java
-        run: javac Main.java
+        run: javac visitor-log-project/Main.java
 
       - name: Run Java
-        run: java Main
+        run: java -cp visitor-log-project Main
